@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tcpsh"
+version = "1.0.0"
+description = "Interactive TCP connection manager"
+requires-python = ">=3.10"
+dependencies = [
+    "prompt_toolkit>=3.0.0",
+    "rich>=13.0.0",
+    "typer>=0.12.0",
+    "pyyaml>=6.0",
+]
+
+[project.scripts]
+tcpsh = "tcpsh.__main__:app"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["tcpsh*"]
